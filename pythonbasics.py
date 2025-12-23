@@ -148,3 +148,62 @@ if not raining:
 else:
     print("Take an umbrella!")
 
+# LISTS AND LOOPS
+
+acronyms = ['LOL', 'OMG', 'TTYL']
+
+acronyms.append('FYI')
+acronyms.append('IDK')
+acronyms.append('BRB')
+acronyms.append('SMH')
+
+acronyms.remove('TTYL') 
+del acronyms[1]
+print(acronyms)
+
+# check if Exists in List
+acronyms = ['LOL', 'OMG', 'TTYL']
+word = 'BFN'
+
+if word in acronyms:
+    print(word + " is in the list!")
+else:
+    print(word + " is NOT in the list!")
+
+# Loop through a list
+acronyms = ['LOL', 'OMG', 'TTYL', 'BFN', 'FYI']
+for acronym in acronyms:
+    print(acronym)
+
+
+
+# EXPENSES CALCULATOR
+expenses = [25.6, 15, 3, 20, 50, 10.5, 7.25]
+total = sum(expenses)
+print("you spent a total of $", total, sep = '')
+
+# EXPENSES CALCULATOR using loop
+expenses = [25.6, 15, 3, 20, 50, 10.5, 7.25]
+sum_expenses = 0
+for expense in expenses:
+    sum_expenses += expense
+print("you spent a total of $", sum_expenses, sep = '')
+
+
+# Syntax of a for loop
+
+for i in range(7):
+    print(i)
+
+#Adding input to expenses calculator
+total = 0
+expenses = []
+num_expenses = int(input("How many expenses do you have? \n"))
+for i in range(num_expenses):
+    expenses.append(float(input("Enter expense: \n")))
+
+total = sum(expenses)
+print("You spent a total of $", total, sep = '')
+
+
+    
