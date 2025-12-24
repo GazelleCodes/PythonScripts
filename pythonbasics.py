@@ -257,3 +257,43 @@ translation = acronyms.get('IDK') + ' what happened ' + acronyms.get('TBH')
 
 print('sentence:', sentence)
 print('translation:', translation)  
+
+#List of lists
+
+menus = [['egg', 'spam', 'bacon'],
+            ['Yam', 'sandwich', 'beans'],
+            ['pasta', 'salad', 'chicken'] ]
+print("Breakfast menu:\t", menus[0][1]) 
+print("Lunch menu:\t", menus[1])
+print("Dinner menu:\t", menus[2])
+
+# Use a dictionary to store lists instead of lists of lists
+menus = {
+    'breakfast': ['egg', 'spam', 'bacon'],
+    'lunch': ['Yam', 'sandwich', 'beans'],
+    'dinner': ['pasta', 'salad', 'chicken']
+}
+print("Breakfast menu:\t", menus['breakfast'])
+print("Lunch menu:\t", menus['lunch'])
+print("Dinner menu:\t", menus['dinner'])
+
+
+#Using a dictionary key and value in a  for loop
+
+menus = {
+    'breakfast': ['egg', 'spam', 'bacon'],
+    'lunch': ['Yam', 'sandwich', 'beans'],
+    'dinner': ['pasta', 'salad', 'chicken']
+}
+for meal, menu in menus.items():
+    print(meal, ':', menu)
+
+# Using dictionary to represent objects
+car = {
+    'Name': 'Toyota',
+    'model': 'Corolla',
+    'year': 2020,
+    'color': 'blue'
+}
+
+print('I have', car.get('Name'), car.get('model'), 'from', car.get('year'), 'in', car.get('color'), 'color.')
