@@ -196,14 +196,64 @@ for i in range(7):
     print(i)
 
 #Adding input to expenses calculator
-total = 0
-expenses = []
-num_expenses = int(input("How many expenses do you have? \n"))
-for i in range(num_expenses):
-    expenses.append(float(input("Enter expense: \n")))
+# total = 0
+# expenses = []
+# num_expenses = int(input("How many expenses do you have? \n"))
+# for i in range(num_expenses):
+#     expenses.append(float(input("Enter expense: \n")))
 
-total = sum(expenses)
-print("You spent a total of $", total, sep = '')
+# total = sum(expenses)
+# print("You spent a total of $", total, sep = '')
 
+# Creating Dictionaries
 
-    
+acronyms = {}
+acronyms['LOL'] = 'Laughing Out Loud'
+acronyms['OMG'] = 'Oh My God'
+acronyms['TTYL'] = 'Talk To You Later'
+
+print(acronyms)
+
+# Updating a dictionary
+acronyms = {'LOL': 'Laughing Out Loud', 
+            'OMG': 'Oh My God', 
+            'TTYL': 'Talk To You Later'}
+acronyms['OMG'] = 'Oh My Goodness'
+print(acronyms )
+
+# Deleting from a dictionary
+acronyms = {'LOL': 'Laughing Out Loud', 
+            'OMG': 'Oh My God', 
+            'TTYL': 'Talk To You Later'}
+
+del acronyms['LOL']
+print(acronyms)
+
+#Getting an item that is not in the dictionary
+
+acronyms = {'LOL': 'Laughing Out Loud', 
+            'OMG': 'Oh My God', 
+            'TTYL': 'Talk To You Later'}
+definition = acronyms.get('BFN')
+print(definition)  # Prints: None
+
+# Using a loop to go through a dictionary
+acronyms = {'LOL': 'Laughing Out Loud', 
+            'OMG': 'Oh My God', 
+            'TTYL': 'Talk To You Later'}
+definition = acronyms.get('BFN')
+
+if definition:
+    print(definition)
+else:
+    print("That acronym is not in the dictionary.")
+
+#Using Dictionary to translate a sentence
+acronyms = {'LOL': 'Laughing Out Loud', 
+            'IDK': "I Don't Know", 
+            'TBH': 'To Be Honest',}
+sentence = 'IDK'  +  'what happened'  +  'TBH'
+translation = acronyms.get('IDK') + ' what happened ' + acronyms.get('TBH')
+
+print('sentence:', sentence)
+print('translation:', translation)  
