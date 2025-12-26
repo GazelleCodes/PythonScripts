@@ -297,3 +297,17 @@ car = {
 }
 
 print('I have', car.get('Name'), car.get('model'), 'from', car.get('year'), 'in', car.get('color'), 'color.')
+
+
+# Making a HTTP request in a virtual environment
+
+import requests
+
+response = requests.get('http://api.open-notify.org/astros.json')
+jason = response.json()
+
+print(jason)
+
+print('The people currently in space are :')
+for person in jason['people']:
+    print(person['name'])
