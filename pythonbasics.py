@@ -323,4 +323,5 @@ class Robot_Dog:
 # Main program
 my_dog = Robot_Dog("Buddy", "Golden Retriever")
 print("My dog's name is", my_dog.name)
+print("My dog's breed is", my_dog.breed)
 my_dog.bark()
