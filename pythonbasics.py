@@ -311,3 +311,16 @@ print(jason)
 print('The people currently in space are :')
 for person in jason['people']:
     print(person['name'])
+
+# Objects and Classes
+class Robot_Dog:
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
+
+    def bark(self):
+        print("Woof! Woof!")
+# Main program
+my_dog = Robot_Dog("Buddy", "Golden Retriever")
+print("My dog's name is", my_dog.name)
+my_dog.bark()
