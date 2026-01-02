@@ -325,3 +325,58 @@ my_dog = Robot_Dog("Buddy", "Golden Retriever")
 print("My dog's name is", my_dog.name)
 print("My dog's breed is", my_dog.breed)
 my_dog.bark()
+
+
+# Synthax erroo vs exceptions
+
+acronyms = {'LOL': 'Laughing Out Loud',
+            'OMG': 'Oh My God', 
+            'TTYL': 'Talk To You Later'}
+
+# definition = acronyms.get('BFN') # This will not raise an exception
+# print(definition)  # Prints: None
+
+# definition = acronyms['BFN'] # This will raise a KeyError exception
+# print(definition)  # KeyError: 'BFN'
+
+
+# Handling exceptions with try and except
+acronyms = {'LOL': 'Laughing Out Loud',
+            'OMG': 'Oh My God', 
+            'TTYL': 'Talk To You Later'}
+
+try:
+    definition = acronyms['BFN']  # This will raise a KeyError exception
+    print(definition)
+except KeyError:
+    print("That acronym is not in the dictionary.")
+
+
+# Using finally in exception handling
+acronyms = {'LOL': 'Laughing Out Loud',
+            'OMG': 'Oh My God', 
+            'TTYL': 'Talk To You Later'}
+try:
+    definition = acronyms['BFN']  # This will raise a KeyError exception
+    print("Definition of ", acronym," is", definition)
+except KeyError:
+    print("The key", acronym, "is not in the dictionary.")
+
+finally:
+    print("The acronyms that we have defined are:")
+    for acronym in acronyms:
+        print(acronym)
+print("The program keeps running smoothly!")
+
+
+# Raising a custom exception
+def remainder_division(a, b):
+    if b == 0:
+        raise Exception("The divisor cannot be zero.")
+    result = a // b
+    remainder = a % b
+    print(a, '/', b, "is", result, "remainder", remainder)
+
+# Main program
+remainder_division(10, 0)
+   
