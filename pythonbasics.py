@@ -379,4 +379,44 @@ def remainder_division(a, b):
 
 # Main program
 remainder_division(10, 0)
+
+
+#JSON VS PICKLE
+
+import json
+import pickle
+
+# Serialization using JSON
+data = {"name": "John", "age": 30}
+json_serialized = json.dumps(data)
+print(json_serialized)  # Outputs: {"name": "John", "age": 30}
+
+# Deserialization using JSON
+json_deserialized = json.loads(json_serialized)
+print(json_deserialized)  # Outputs: {'name': 'John', 'age': 30}
+
+# Serialization using Pickle
+pickle_serialized = pickle.dumps(data)
+print(pickle_serialized)  # Outputs: b'\x80\x04\x95\x1f\x00\x00\x00\x00\x00\x00\x00}\x94(\x8c\x04name\x94\x8c\x04John\x94\x8c\x03age\x94K\x1eu.'
+
+# Deserialization using Pickle
+pickle_deserialized = pickle.loads(pickle_serialized)
+print(pickle_deserialized)  # Outputs: {'name': 'John', 'age': 30}
+
+complex_data = (1 + 2j)  # Complex number
+pickle_serialized = pickle.dumps(complex_data)
+# This will raise a TypeError as JSON can't serialize complex numbers
+json_serialized = json.dumps(complex_data)
+pickle_deserialized = pickle.loads(pickle_serialized)  # This will preserve the complex number data type
    
+# Pickling to a bytes object
+pickled_data = pickle.dumps(data)
+
+# Unpickling from a bytes object
+unpickled_data = pickle.loads(pickled_data)
+
+# Example of a PicklingError
+try:
+    bad_data = pickle.loads(b"not a pickled object")
+except pickle.PicklingError as e:
+    print(f"PicklingError: {e}")
