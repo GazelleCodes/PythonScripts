@@ -7,4 +7,4 @@ def search(filename, text):
                 print(line)
                 result.append(line)
 
-search('secure.log', 'failed')
+search('secure.log', 'Failed')

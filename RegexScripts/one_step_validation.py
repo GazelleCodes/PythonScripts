@@ -10,7 +10,7 @@ def validate_password(password):
     # return True if the password matches the pattern
     return bool(match)
 
-password1 = input('Gazelle23@ ') #replace this
+password1 = input('Enter password: ') #replace this
 print(validate_password(password1))
 
 result = validate_password(password1)
