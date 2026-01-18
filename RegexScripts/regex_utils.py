@@ -51,23 +51,23 @@ def match_lines_ending_with(text: str, suffix: str) -> List[str]:
 
 def replace_vowels_with_astrisks(text: str) -> str:
     """Returns a string where all vowels from the input string have been replaced with an asterisks."""
-    return
+    return re.sub(r"[aeiouAEIOU]","*", text)
 
 def double_every_digit(text: str) -> str:
     """Return a new string where all integers have been doubled."""
-    return
+    return re.sub(r"\d", lambda m: str(int(m.group()) * 2), text)
 
 def split_on_digits(text: str) -> List[str]:
     """Return an array of strings that where each string comes from the original and has been split on digits."""
-    return
+    return re.split(r"\d", text)
 
 def split_on_a_specific_symbol(text: str) -> List[str]:
     """Return an array of strings that are the original string split on any symbol that matches '-', ':', or '|'."""
-    return
+    return re.split(r"[-:|]", text)
 
 def split_on_capital_letters(text: str) -> List[str]:
     """Return a list of strings split before each capital letter."""
-    return
+    return re.split(r"(?=[A-Z])", text)
 
 # Step 4 - Real Life Examples
 
@@ -75,33 +75,36 @@ def extract_dates(text: str) -> List[str]:
     """
     Extract and return a dictionary with 'month', 'day', and 'year' keys if a date is found.
     """
-    return
+    return re.findall(r"\b(\d{2})[-/](\d{2})[-/](\d{4})\b",text)
 
 def is_valid_email(email: str) -> bool:
     """
     Return True if the input is a valid email address, otherwise False.
     """
-    return
+    return bool(re.fullmatch(r"[A-Za-z0-9._%+-]+@(?:[A-Za-z0-9-]+\.)+[A-Za-z]{2,}", email))
+  
 
 def extract_named_date(text: str) -> dict[str, str] | None:
     """
     Extracts a date and returns a dictionary with 'month', 'day', and 'year' keys. 
     Return a dictionary that contains month, day, and year with the appropiate values.
     """
-    return
+    match = re.search(r"(?P<month>\d{2})[-/](?P<day>\d{2})[-/](?P<year>\d{4})", text)
+    return match.groupdict() if match else None
 
 def normalize_phone_number(text: str) -> str:
     """
     Normalize phone numbers in the text to the format (XXX) XXX-XXXX.
     Return a new string that replaces provided numbers with the normalized format.
     """
-    return
+    return re.sub( r"(\d{3})[-.\s]?(\d{3})[-.\s]?(\d{4})", r"(\1) \2-\3", text)
 
 def is_valid_zip(zipcode: str) -> bool:
     """
     Return True if the input is a valid US ZIP code (5-digit or ZIP+4 format), otherwise False.
     """
-    return
+    return bool(re.fullmatch(r"\d{5}(-\d{4})?", zipcode))
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Run regex functions.")
