@@ -1,0 +1,44 @@
+class Employee:
+    def __init__(self, name, age,  salary):#Instance attributes OF the class Employee
+        self.name = name
+        self.age = age
+        self.salary = salary
+
+    
+    def increase_salary(self, percentage):
+        self.salary += self.salary * (percentage / 100)
+
+class Tester(Employee): #Inheritance: Tester class inherits from Employee class
+    def run_tests(self):
+        print(f"{self.name} is running tests.")
+        print("Tests are done.")
+
+
+
+class Developer(Employee): #Inheritance: Developer class inherits from Employee class
+    def __init__(self, name, age, salary, framework):
+        super().__init__(name, age, salary)
+        self.framework = framework
+
+
+
+    def increase_salary(self, percentage, bonus=0): #Method overriding: Custom increase_salary method for Developer class
+        super().increase_salary(percentage)
+        self.salary += bonus
+        
+
+employee1 = Tester("Alice", 30, 80000)
+employee2 = Developer("Bob", 45, 95000 , "Django")
+
+
+employee1.increase_salary(20)  # Using inherited method
+employee2.increase_salary(10, 30)  # Using overridden method
+print(employee1.salary)  # Display Alice's salary
+print(employee2.salary)  # Display Bob's salary
+print(employee2.framework)  # Display Bob's framework
+print(employee2.name)  # Display Alice's name
+
+
+
+   
+    

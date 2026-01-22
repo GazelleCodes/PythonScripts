@@ -20,7 +20,7 @@ class Employee:
             f"{repr(self.position)}, {self.salary})"
          )
      
-    @property #decorates and add mor functionality to the attribute, prevent bugs
+    @property #decorates and add more functionality to the attribute, prevent bugs
     def salary(self):
         return self._salary 
 

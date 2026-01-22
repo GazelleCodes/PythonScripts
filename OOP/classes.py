@@ -19,7 +19,7 @@ class Employee:
             f"{repr(self.position)}, {self.salary})"
          )
      
-    @property #decorates and add mor functionality to the attribute, prevent bugs
+     
     def get_salary(self):
         return self._salary ##_self.salary means non-public attribute, while __self.salary means name mangling.
     
