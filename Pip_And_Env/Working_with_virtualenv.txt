@@ -1,0 +1,20 @@
+To install venv yiu use the commad;
+python version -m venv and the name of the file but venv preferably;
+eg: python3.10 -m venv venv
+
+To activate the venv you use;
+. venv/bin/activate on linux and Mac OS 
+venv\Scripts\activate.ps1 on windows
+
+A REQUIRMENT file (Helps your team to know and install the packages they need to work with a pulled request)
+A text file that lists the dependencies of your project along with their version.
+Run;
+pip freeze > requirments.txt 
+cat requirments.txt
+This shows all the file in your venv
+Then you commit and push this to git and your team will see the dependencies and the run;
+pip -r requirments.txt This will downlad all the files they requirment
+
+To leave the venv to your global python run;
+
+deactivate

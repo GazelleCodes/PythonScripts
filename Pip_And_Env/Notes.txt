@@ -1,0 +1,40 @@
+Go to PyPI.org or python package index which is a repo of software for python.
+To download a package, you need to be inside a virtual environment.
+Use the comman python -m pip install followed my the name of the package eg. arrow etc.
+
+ie python -m pip install arrow
+
+Using python -m pip is a good practice to prevent problems
+Inspect the properties like the version and the location with the show command
+
+ie python -m show arrow
+You can remove the package my using the command line(This does not remove the dependencies that comes with the package. you have to do that manually)
+ie python -m uninstall arrow
+
+python -m pip install --upgrade arrow or
+python -m pip install -U pip..this means install the latest version and uninstall anyone present
+
+python -m pip install "arrow == 1.0.0"
+python -m pip install "arrow > 1.0.0, < 3.0" ...this specifies the version to download for different project requirment
+python -m pip install "arrow !=1.0.0"...this means do not install a specific version
+
+You can also install from Github by using the following supported forms;
+MyProject @ git+ssh
+MyProject @ git+file
+MyProject @ git+https
+eg: python -m pip install "demo_pkg @ git+https://github.com/codesensei-courses/demo_pkg.git"
+
+You can also install by pointing to your local file directory
+
+
+INSTALLING OUTSIDE OF A PROJECT 
+Install using pipx: https//pypa.github.oi//pipx/, this instal packages inside their own venv
+pipx install black
+
+To make sure PATH is configured correctly use;
+pipx ensurepath
+
+Alternatively, you can use;
+pip install --user black
+But this does not automatically set up a venv and you need to do PATH set up yourself.
+
