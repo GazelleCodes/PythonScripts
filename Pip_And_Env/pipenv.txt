@@ -1,0 +1,45 @@
+PIPENV COMMAND: INSTALL AND uninstall
+
+#Install packages
+#This updates the pipfile, install the package and dependencies in the venv and 
+#Updates the lockfile
+
+Use the command;
+pipenv install requests
+pipenv install requests~=2.28 #supports a specific version
+pipenv install -d black       #Development dependencies
+
+#This will install everything i.e the dependencies listed  in the pipfile and update the lockfile
+pipenv install
+
+#To remove packages from venv, pipfile and lockfile
+#Does not uninstall dependencies, you have to do that by hand
+pipenv uninstall
+
+#To make sure you have the same packages as your team mates when you get 
+#a lockfile from them use the command;
+pipenv sync #To get everything from the lockfile
+pipenv sync -d #To install development dependencies
+
+#To update packages and dependencies to the latest version
+pipenv update
+pipenv update requests
+
+#To check which packages have security update
+pipenv check
+
+#To show installed packages
+pipenv graph
+
+#To get Help
+pipenv -h
+pipenv install -h
+pipenv update -h 
+
+#To run commands inside our venv
+pipenv run python my_Script.py
+pipenv run black my_pkg
+
+
+#To shell...deactivate instead of exit
+pipenv shell
