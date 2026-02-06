@@ -1,0 +1,48 @@
+POETY COMMANDS 
+
+#To create a new project skeleton
+poetry new my_project
+
+#To initialize a myproject.toml in an existing project
+poetry init 
+
+#To add a dependency. Update pyproject.toml and lockfile, Install package
+poetry add requests
+poetry add requests@1.2.3
+poetry add requests@^2.1
+
+#To remove a dependency. Update pyproject.toml and lockfile
+#uninstall Package and its dependency
+poetry remove
+
+#When you get a new lockfiles from your teammates 
+#Install dependencies from pyproject.toml and update the lock file
+#This doesnt remove any package that you have installed that is not in the lockfile
+poetry install #To install new packages in your environment
+
+
+#To make sure environment matches lockfile
+#To remove packages if necessary
+poetry install --sync
+
+#To update packages within the version specifiers from pyproject.toml
+poetry update
+poetry update requests
+
+#To view the details of installed packages
+poetry show
+poetry show -tree
+poetry show requests
+
+#To get Help
+poetry help 
+poetry help install
+poetry help update
+
+#To run commands inside our venv
+poetry run python my_project.py
+poetry run black my_pkg
+
+#To start a shell with an active venv
+#Make sure to end with exit instead of deactivate
+poetry shell
