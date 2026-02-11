@@ -1,0 +1,4 @@
+    This is a simple sample text.
+    It is a few lines to demonstrate the code example.
+    Your instructor included the word 'sample' in this line again.
+    Here is anothe line without the target word. 

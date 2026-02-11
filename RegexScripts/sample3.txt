@@ -1,0 +1,5 @@
+John Doe
+Phone: john.doe@example.com
+Address: 123 Main St, Anytown, USA, 54321
+Order Number: AB-1234-5678
+Favorite color: #FF5733

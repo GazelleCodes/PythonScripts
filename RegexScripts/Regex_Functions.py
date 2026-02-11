@@ -97,3 +97,43 @@ if match:
     print(f'starts position: {match.start()}') #returns the starting index of the match
     print(f'ends position: {match.end()}') #returns the ending index of the match
     print(f'span: {match.span()}') #returns a tuple containing the start and end positions of the match
+
+
+#re.ignorecase flag makes the regular expression case-insensitive, allowing it to match letters regardless of their case.
+
+pattern = r'hello' #match the word "hello" regardless of case
+text = 'Hello, how are you?'
+
+match = re.search(pattern, text, re.IGNORECASE)
+if match:
+    print(f'Matched word: {match.group()}')
+else:
+    print('No match found.')
+
+
+#re.dotall flag allows the dot (.) to match newline characters, enabling the regular expression to match across multiple lines.
+pattern = r'hello.*world' #match any character including newline characters
+text = 'hello\nworld.'
+
+match = re.search(pattern, text, re.DOTALL)
+if match:
+    print(f'Matched text: {match.group()}')
+else:
+    print('No match found.')
+
+
+#re.MULTILINE flag allows the caret (^) and dollar sign ($) to match the start and end of each line, respectively, rather than just the start and end of the entire string.
+
+pattern = r'^\d+' #match digits at the start of each line
+text = 'Line 1\nLine 2\nLine 3'
+
+matches = re.findall(pattern, text, re.MULTILINE)
+print(f'Matched lines: {matches}')
+
+
+pattern = r'\d+$' #match digits at the end of each line
+text = 'Line 1\nLine 2\nLine 3'
+
+matches = re.findall(pattern, text, re.MULTILINE)
+print(f'Matched lines: {matches}')
+
